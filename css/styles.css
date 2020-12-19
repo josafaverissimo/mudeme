@@ -1,0 +1,69 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@300&display=swap');
+
+html, body {
+	margin: 0;
+	padding: 0;
+	box-sizing: border-box;
+}
+
+.squares {
+	display: grid;
+	overflow-y: scroll;
+	grid-template-columns: 1fr 1fr;
+	grid-template-rows: 40vh 60vh;
+	grid-template-areas: "trackme first" "second third";
+}
+
+@media (max-width: 652px) {
+	.squares {
+		grid-template-columns: 1fr;
+		grid-template-rows: 25vh 25vh 25vh 25vh;
+		grid-template-areas: "trackme" "first" "second" "third";
+	}
+}
+
+.squares div:nth-child(1){
+	grid-template-areas: trackme;
+	
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.squares div:nth-child(1) h1 {
+	font-family: 'Roboto', sans-serif;
+	font-size: 4rem;
+}
+
+.squares div:nth-child(1) h1::before, .squares div:nth-child(1) h1::after {
+	display: block;
+	content: '';
+	height: 6px;
+	width: 140px;
+	background: #4f4f4f;
+	margin: 0 auto;
+}
+
+.blue {
+	background-color: blue;
+}
+
+.green {
+	background-color: green;
+}
+
+.yellow {
+	background-color: yellow;
+}
+
+.first {
+	grid-area: first;
+}
+
+.second {
+	grid-area: second;
+}
+
+.third {
+	grid-area: third;
+}
